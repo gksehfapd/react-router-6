@@ -13,7 +13,11 @@ function User() {
 			{/* to='/followers' 는 절대경로
 				to='followers' 는 상대경로 */}
 			<Link to="followers">See followers</Link>
-			<Outlet />
+			<Outlet
+				context={{
+					nameOfMyUser: users[Number(userId) - 1].name
+				}}
+			/>
 		</div>
 	)
 }
